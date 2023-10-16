@@ -1,0 +1,270 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+      //900px
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+      //1200px
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+      //1800px
+    }
+  }
+}
+
+.header {
+  background-color: #002242;
+  width: 100%;
+  & > * {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  & a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+
+    padding-top: 1.5rem;
+    font-family: 'Lato', sans-serif;
+    @include respond(tab-land) {
+      display: none;
+    }
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    &-center--wrapper {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      @include respond(tab-land) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding: 0 1.2rem;
+      }
+    }
+
+    &-contact {
+      display: flex;
+      align-items: baseline;
+      &--phone {
+        margin-right: 2rem;
+      }
+    }
+    &-shortcuts {
+      display: flex;
+    }
+
+    &-icon {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-right: 1rem;
+      &--last {
+        margin-left: 1rem;
+      }
+    }
+  }
+  &__mobile-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #333;
+    font-size: 4.4rem;
+    display: none;
+    color: #fff;
+    @include respond(tab-land) {
+      display: block;
+    }
+    @include respond(phone) {
+      display: block;
+      font-size: 2.5rem;
+    }
+  }
+  &__center {
+    padding-top: 20px;
+    padding-bottom: 15px;
+
+    &-logo img {
+      width: 13.5rem;
+      height: 4rem;
+      @include respond(phone) {
+        width: 10rem;
+        height: 3rem;
+      }
+    }
+
+    &-searchbox {
+      display: block;
+      width: 74%;
+      padding: 0 4rem;
+      @include respond(tab-land) {
+        order: 4;
+        width: 100%;
+        padding: 0;
+      }
+      @include respond(tab-port) {
+        margin-top: 3rem;
+      }
+    }
+
+    &-search--container {
+      display: flex;
+      position: relative;
+
+      height: 4.2rem;
+      align-items: center;
+      background: #fff;
+      width: 100%;
+      border-radius: 3.5rem;
+
+      & input {
+        font-size: 1.4rem;
+        background-color: rgba(251, 246, 246, 0);
+        padding-left: 2rem;
+        line-height: 2rem;
+        height: 100%;
+        border: none;
+        flex: 1 1;
+        outline: 0;
+      }
+    }
+
+    &-search--icon__item {
+      position: absolute;
+      font-size: 2rem;
+      font-weight: bold;
+      right: 2rem;
+      top: 1rem;
+    }
+
+    &-login--cart {
+      display: flex;
+
+      & .user,
+      & .cart {
+        display: flex;
+
+        & a span {
+          font-size: 1.6rem;
+          @include respond(tab-land) {
+            display: none;
+          }
+        }
+        &__icon {
+          font-size: 2rem;
+          margin-right: 1rem;
+        }
+      }
+
+      & .cart {
+        margin-left: 2rem;
+        @include respond(tab-port) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    @include respond(tab-land) {
+      display: none;
+    }
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+
+    &-smart--btn {
+      border: none;
+      background: #ffc220;
+      height: 3.7rem;
+      font-weight: 700;
+      font-family: 'Lato', sans-serif;
+      padding-right: 1.5rem;
+      padding-left: 0.8rem;
+      font-size: 1.4rem;
+      border-radius: 3.2rem;
+    }
+    &-navigation {
+      display: flex;
+      width: 1140px;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-nav--1 {
+      display: flex;
+    }
+    &-nav .navBtn {
+      border: none;
+      display: flex;
+      margin-right: 2rem;
+      border: 0;
+      background: #fff;
+      cursor: pointer;
+      & span {
+        font-size: 1.8rem;
+      }
+      &-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+      }
+    }
+    &-nav ul {
+      display: flex;
+      list-style: none;
+      width: 100%;
+      li a {
+        padding: 0 10px;
+        color: #000;
+        font-size: 1.6rem;
+      }
+    }
+
+    // &-nav ul li {
+    //   padding: 10px;
+    // }
+  }
+}
+.sticky {
+  position: fixed;
+  z-index: 1111;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  transition: all 0.1s;
+  padding: 20px 30px;
+  background-color: #002242;
+  @include respond(phone) {
+    position: relative !important;
+  }
+}
