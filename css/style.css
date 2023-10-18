@@ -283,13 +283,15 @@
         height: 100%;
         border-radius: 0.8rem; }
         .main__slider-slider-slide--1 {
-          background-image: url("https://img.gigatron.rs/img/src/slideshow/mobile/17b4117252073d9bfaac6d8276719a41.jpg"); }
+          background-image: url("../img/s1.jpg");
+          background-size: cover;
+          object-fit: cover; }
         .main__slider-slider-slide--2 {
-          background-image: url("https://img.gigatron.rs/img/src/slideshow/32197385c2f2590afc7a6954893a283f.jpg"); }
+          background-image: url("../img/s2.jpg"); }
         .main__slider-slider-slide--3 {
-          background-image: url("https://img.gigatron.rs/img/src/slideshow/c5a14d890b6e974907c87cd56ecfcbe1.jpg"); }
+          background-image: url("../img/s3.jpg"); }
         .main__slider-slider-slide--4 {
-          background-image: url("https://img.gigatron.rs/img/src/slideshow/1abfd64fec633b0285ef6d5a8cb24db2.jpg"); }
+          background-image: url("../img/s4.jpg"); }
     .main__slider-deal {
       width: 28%;
       background-color: #fff;
@@ -922,7 +924,7 @@
             justify-content: start;
             align-items: center; } }
         .main__gaming-content--main__1 {
-          background-image: url("https://img.gigatron.rs/img/home_redesign/ps5.webp");
+          background-image: url("../img/p1.webp");
           background-repeat: no-repeat;
           background-position: 100% 100%; }
           @media only screen and (max-width: 56.25em) {
@@ -930,7 +932,7 @@
               background-position: bottom;
               background-size: 100%; } }
         .main__gaming-content--main__2 {
-          background-image: url("https://img.gigatron.rs/img/home_redesign/ps4.webp");
+          background-image: url("../img/p2.webp");
           background-repeat: no-repeat;
           background-position: 100% 100%; }
           @media only screen and (max-width: 56.25em) {
@@ -938,7 +940,7 @@
               background-position: bottom;
               background-size: 90%; } }
         .main__gaming-content--main__3 {
-          background-image: url("https://img.gigatron.rs/img/home_redesign/xbox.webp");
+          background-image: url("../img/p3.webp");
           background-repeat: no-repeat;
           background-position: 100% 100%; }
           @media only screen and (max-width: 56.25em) {
@@ -946,14 +948,14 @@
               background-position: bottom;
               background-size: 100%; } }
         .main__gaming-content--main__4 {
-          background-image: url("https://www.clxgaming.com/img/components/cas-lia-pco11do/gallery/1.png");
+          background-image: url("../img/p4.webp");
           background-repeat: no-repeat;
           background-position: 100% 100%;
           background-size: 45%; }
           @media only screen and (max-width: 56.25em) {
             .main__gaming-content--main__4 {
               background-position: bottom;
-              background-size: 70%; } }
+              background-size: 100%; } }
         .main__gaming-content--main__active {
           display: flex;
           justify-content: space-between; }
